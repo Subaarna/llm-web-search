@@ -15,6 +15,7 @@ Here's how the app looks:
 ![Answer](assets/answers.png)
 
 
+
 ## Table of Contents
 1. [Architecture & Design](#architecture--design)
 2. [Core Components](#core-components)
@@ -35,6 +36,13 @@ Here's how the app looks:
        └─────────────────────────────────────────┘
               (Additional queries if needed)
 ```
+### Tools Used
+- **LLM**: Groq API for query generation and answer synthesis
+- **Search**: Tavily API for web search functionality
+- **Framework**: Streamlit for the web interface
+- **Container**: Docker for consistent deployment
+- **Testing**: Pytest for automated testing
+
 
 ### Component Responsibilities
 1. **Generate Queries**
@@ -74,6 +82,12 @@ Key features:
 - Error handling with fallbacks
 
 ### 2. Web Search
+
+Key features:
+- Uses Tavily API (after Bing API deprecation)
+- Reliable search results with academic focus
+- Fallback to alternative search providers
+
 ```python
 def search_all(queries: list[str]) -> list[dict]:
     """
