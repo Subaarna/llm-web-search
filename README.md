@@ -1,6 +1,19 @@
 # LLM Research Agent
 
 A robust research agent that leverages LLMs and web search to provide concise, factual answers with citations.
+Access the deployed version of this app here: [https://subarna00-llm-research.hf.space/](https://subarna00-llm-research.hf.space/)
+
+Here's how the app looks:
+
+**Home Screen**
+![Home Screen](assets/home.png)
+
+**Research Process**
+![Research Process](assets/process.png)
+
+**Final Answer with Citations**
+![Answer](assets/answer.png)
+
 
 ## Table of Contents
 1. [Architecture & Design](#architecture--design)
