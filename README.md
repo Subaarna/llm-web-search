@@ -366,53 +366,37 @@ docker compose run --rm agent "Who won the 2022 FIFA World Cup?"
 }
 ```
 
-## Known Limitations
+## Limitations and Hallucination Risks
 
-1. **Search Constraints**
-   - Limited by API quotas
-   - English-only queries
-   - Web-accessible information only
+### Current Safeguards
+1. **Basic Citation Validation**
+   - Ensures every citation in answer maps to a source
+   - Validates citation format [1][2]
+   - Links citations to original URLs
 
-2. **Answer Limitations**
-   - 80-word maximum
-   - No real-time data
-   - Citation availability
+2. **Information Tracking**
+   - Uses slot-based tracking for required information
+   - Identifies missing information
+   - Triggers additional searches when needed
 
-3. **Technical Boundaries**
-   - Two search rounds maximum
-   - No streaming responses
-   - Single search provider
+### Known Risks
+1. **Content Verification Gaps**
+   - No cross-source fact verification
+   - No temporal consistency checking
+   - No numerical claim validation
 
-## Future Improvements
+2. **Hallucination Types**
+   - May combine facts incorrectly
+   - Could generate plausible but incorrect details
+   - Might infer relationships not stated in sources
 
-### High Priority
-1. **Performance**
-   - Add result caching
-   - Implement response streaming
-   - Optimize concurrent searches
+### Future Work Needed
+1. **Enhanced Validation**
+   - Implement cross-source fact checking
+   - Add temporal consistency validation
+   - Verify numerical claims
 
-2. **Reliability**
-   - Add circuit breakers
-   - Improve error handling
-   - Implement retry logic
-
-3. **Features**
-   - Support multiple languages
-   - Add source verification
-   - Implement fact-checking
-
-### Nice to Have
-1. **Monitoring**
-   - Add structured logging
-   - Track performance metrics
-   - Implement tracing
-
-2. **User Experience**
-   - Add progress indicators
-   - Improve error messages
-   - Support interactive mode
-
-## Conclusion
-The LLM Research Agent provides a solid foundation for automated research tasks. While there are limitations and areas for improvement, the current implementation successfully balances functionality, reliability, and maintainability.
-
-The modular design allows for easy extensions and improvements, while the comprehensive test suite ensures reliability. Future work will focus on performance optimization and feature enhancement while maintaining the core simplicity of the system. 
+2. **Improved Controls**
+   - Add conservative language requirements
+   - Implement date context validation
+   - Add source credibility scoring
