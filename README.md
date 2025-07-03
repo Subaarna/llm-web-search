@@ -12,7 +12,7 @@ Here's how the app looks:
 ![Research Process](assets/process.png)
 
 **Final Answer with Citations**
-![Answer](assets/answer.png)
+![Answer](assets/answers.png)
 
 
 ## Table of Contents
