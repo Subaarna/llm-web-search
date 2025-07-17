@@ -96,7 +96,7 @@ def identify_slots(question: str, client: Groq) -> Tuple[List[str], List[str]]:
     """Identify required information slots for the question."""
     try:
         response = client.chat.completions.create(
-            model="qwen-qwq-32b",
+            model="llama-3.3-70b-versatile",
             messages=[
                 {
                     "role": "system",
@@ -195,7 +195,7 @@ def reflect(question: str, documents: List[Dict[str, Any]]) -> Dict[str, Any]:
         # Then analyze documents for slot filling
         formatted_docs = format_documents(documents)
         response = client.chat.completions.create(
-            model="qwen-qwq-32b",
+            model="llama-3.3-70b-versatile",
             messages=[
                 {
                     "role": "system",

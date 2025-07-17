@@ -149,7 +149,7 @@ def synthesize(question: str, documents: List[Dict[str, Any]]) -> Dict[str, Any]
         
         formatted_docs = format_documents(documents)
         response = client.chat.completions.create(
-            model="qwen-qwq-32b",
+            model="llama-3.3-70b-versatile",
             messages=[
                 {
                     "role": "system",

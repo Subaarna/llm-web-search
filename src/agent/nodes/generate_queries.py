@@ -40,7 +40,7 @@ def generate_queries(question: str) -> List[str]:
         client = Groq(api_key=os.getenv("GROQ_API_KEY"))
         
         response = client.chat.completions.create(
-            model="qwen-qwq-32b",  # Using Qwen model
+            model="llama-3.3-70b-versatile",  # Using Qwen model
             messages=[
                 {"role": "system", "content": "You are a helpful assistant that generates search queries. Always respond with ONLY a JSON array of strings, nothing else."},
                 {"role": "user", "content": PROMPT_TEMPLATE.format(question=question)}
